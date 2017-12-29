@@ -1,0 +1,25 @@
+.thumbnailList{
+  text-align: center;
+}
+
+.thumbnail-image{
+  height: 100%;
+  width: 100%;
+}
+
+.thumbnail-title{
+  background-color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 5%;
+  margin-bottom: 25px;
+}
+
+.quiz-type{
+  text-align: left;
+  border-bottom: 4px solid rgba(248,231,28,0.80);
+}
+.quiz-type small{
+    color: #F5A623;
+    font-weight: bold;
+}

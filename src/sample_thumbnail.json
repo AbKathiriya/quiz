@@ -1,0 +1,56 @@
+{
+    "quiz_iq": [
+        {
+            "quiz_title": "Are you smartest among friends?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 12345
+        },
+        {
+            "quiz_title": "Are you smarter than fifth graders?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 1
+        },
+        {
+            "quiz_title": "The ultimate IQ challenge",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 2
+        },
+        {
+            "quiz_title": "Surely you will fail this",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 3
+        },
+        {
+            "quiz_title": "Only Einstein could solve this...",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 4
+        }
+    ],
+    "quiz_personality": [
+        {
+            "quiz_title": "Are you sociable?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 5
+        },
+        {
+            "quiz_title": "Are you friendly?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 6
+        },
+        {
+            "quiz_title": "Are you kind?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 7
+        },
+        {
+            "quiz_title": "Are you extroverted?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 8
+        },
+        {
+            "quiz_title": "Are you hardworking?",
+            "quiz_image": "http://www.breathofoptimism.com/wp-content/uploads/2013/08/laughing.jpg",
+            "quiz_id": 9
+        }
+    ]
+}

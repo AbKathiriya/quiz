@@ -1,0 +1,35 @@
+.quizIntro{
+  padding: 5%;
+  background-color: rgba(248,231,28,0.50);
+  text-align: center;
+}
+.quizTitle{
+  text-align: center;
+  border-bottom: 0px;
+}
+.quizDescription{
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.question{
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.question img{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.answer{
+  background-color: #FFFFFF;
+  background-image: none;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.answer img{
+  height: 75px;
+}
