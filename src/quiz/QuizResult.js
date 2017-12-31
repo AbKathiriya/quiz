@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import './Quiz.css';
-import { PageHeader, Grid, Row, Col, Button } from 'react-bootstrap';
+import { PageHeader } from 'react-bootstrap';
 
 class QuizResult extends Component {
   render() {
+    let result = this.props.location.state.result;
+    let score = this.props.location.state.score;
     return (
       <div className="quizIntro">
         <PageHeader className="quizTitle">
-          {this.props.result}
+          {score}
         </PageHeader>
-        <div className="quizDescription">
-          {this.props.data.quiz_text}
-        </div>
-        <div>
-          <Button
-            bsStyle="success"
-            bsSize="large"
-          >START
-          </Button>
+        <div className="quizDescription" dangerouslySetInnerHTML={{__html: result}}>
         </div>
       </div>
     );
   }
 }
 
-export default QuizIntro;
+export default QuizResult;

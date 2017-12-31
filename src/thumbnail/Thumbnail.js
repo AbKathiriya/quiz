@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Thumbnail.css';
 
 class Thumbnail extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <img src={this.props.quizImage} className="thumbnail-image" alt="quiz_image" />
-        </div>
-        <div className="thumbnail-title">
-          {this.props.quizTitle}
-        </div>
-      </div>
+        <Link to={{
+            pathname: '/quiz',
+            state: {id: this.props.id }
+        }}>
+          <div>
+            <div>
+              <img src={this.props.quizImage} className="thumbnail-image" alt="quiz_image" />
+            </div>
+            <div className="thumbnail-title">
+              {this.props.quizTitle}
+            </div>
+          </div>
+      </Link>
     );
   }
 }

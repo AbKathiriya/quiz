@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { PageHeader, Grid, Row, Col, Button } from 'react-bootstrap';
+import { PageHeader, Row, Col, Button } from 'react-bootstrap';
 import Thumbnail from './Thumbnail';
+import './Thumbnail.css';
 
 class ThumbnailList extends Component {
   constructor(props){
@@ -16,17 +17,17 @@ class ThumbnailList extends Component {
           rows.push(
               <Row>
                 <Col xs={6} md={6}>
-                  <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id}/>
+                  <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id} id={thumbnails[i].quiz_id}/>
                 </Col>
                 <Col xs={6} md={6}>
-                  <Thumbnail quizTitle={thumbnails[i+1].quiz_title} quizImage={thumbnails[i+1].quiz_image} key={thumbnails[i+1].quiz_id}/>
+                  <Thumbnail quizTitle={thumbnails[i+1].quiz_title} quizImage={thumbnails[i+1].quiz_image} key={thumbnails[i+1].quiz_id} id={thumbnails[i+1].quiz_id}/>
                 </Col>
               </Row>);
         }else {
           rows.push(
               <Row>
                 <Col xs={6} md={6}>
-                  <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id}/>
+                  <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id} id={thumbnails[i].quiz_id} />
                 </Col>
               </Row>);
         }
@@ -35,7 +36,7 @@ class ThumbnailList extends Component {
       return (
         <div className="thumbnailList">
           <PageHeader className="quiz-type"><small>{ this.props.title }</small></PageHeader>
-          <Grid>
+
             {rows}
             <Row>
               <Col xs={12} md={12}>
@@ -47,16 +48,13 @@ class ThumbnailList extends Component {
                 </Button>
               </Col>
             </Row>
-          </Grid>
         </div>
       )
     } else {
       return (
         <div className="thumbnailList">
-          <PageHeader>{ this.props.title }</PageHeader>
-          <Grid>
+          <PageHeader className="quiz-type"><small>{ this.props.title }</small></PageHeader>
             { rows }
-          </Grid>
         </div>
       );
     }
