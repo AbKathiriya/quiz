@@ -69,7 +69,12 @@ class Quiz extends Component {
             // return <QuizResult result={ result } score={score} />
             return <Redirect to={{
                 pathname: '/quiz/result',
-                state: {result, score}
+                state: {
+                    result,
+                    score,
+                    quizId: this.props.location.state.quizId,
+                    quizType: this.props.location.state.quizType
+                }
             }} />
         }
   }

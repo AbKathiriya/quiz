@@ -11,6 +11,7 @@ class QuizIntro extends Component {
           return '';
       }else{
         let quizId = this.props.location.state.id;
+        let quizType = this.props.location.state.type;
         let quizInfo = Object.values(Quiz_data).filter((value) => {return value.quiz_description.quiz_id === quizId})
         if(quizInfo.length){
             return (
@@ -23,7 +24,12 @@ class QuizIntro extends Component {
                 </div>
                 <Link to={{
                     pathname: '/quiz/questions',
-                    state: {questionsList: quizInfo[0].questions_list, resultList : quizInfo[0].results }
+                    state: {
+                        questionsList: quizInfo[0].questions_list,
+                        resultList : quizInfo[0].results,
+                        quizType,
+                        quizId
+                    }
                 }}>
                 <div>
                   <Button

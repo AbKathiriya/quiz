@@ -6,8 +6,8 @@ export default class ThumbnailMain extends Component {
     render(){
         return(
             <div>
-                <ThumbnailList data={Thumbnail_data.quiz_iq} title='IQ Quizzes'/>
-                <ThumbnailList data={Thumbnail_data.quiz_personality} title='Personality Quizzes'/>
+                <ThumbnailList data={Thumbnail_data.quiz_iq} title='IQ Quizzes' type='quiz_iq'/>
+                <ThumbnailList data={Thumbnail_data.quiz_personality} title='Personality Quizzes' type='quiz_personality'/>
             </div>
         )
     }

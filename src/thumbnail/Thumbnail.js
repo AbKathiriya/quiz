@@ -7,7 +7,10 @@ class Thumbnail extends Component {
     return (
         <Link to={{
             pathname: '/quiz',
-            state: {id: this.props.id }
+            state: {
+                id: this.props.id,
+                type: this.props.type
+            }
         }}>
           <div>
             <div>
