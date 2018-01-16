@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+//import { ProgressBar } from 'react-bootstrap';
 import './Quiz.css';
 import Question from './Question';
 
 class Quiz extends Component {
   constructor(props){
     super(props);
-    console.log(this.props.location.state.questionsList)
     this.setCorrectAnswer = this.setCorrectAnswer.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
 
@@ -36,7 +36,6 @@ class Quiz extends Component {
 
   async onClickHandler(selectedAns) {
     await this.setCorrectAnswer();
-    console.log(selectedAns, this.state.correctAns)
     if(selectedAns === this.state.correctAns){
       this.setState({score:this.state.score+1});
     }
@@ -49,19 +48,31 @@ class Quiz extends Component {
       let percent = (this.state.score*100)/this.state.totalQuestions;
       let buckets = 100/this.resultList.length;
       let resultIndex = parseInt(percent/buckets, 10)-1;
+      resultIndex = resultIndex === -1 ? 0 : resultIndex;
       let resultValue = this.resultList[resultIndex];
       return resultValue;
   }
 
   render() {
+    let visited = [];
+    for(var i=0;i<this.state.questionIndex;i++){
+        visited.push(<div className="circle visited"></div>);
+    }
+    let active=[];
+    for(i=this.state.questionIndex;i<this.state.totalQuestions;i++){
+        active.push(<div className="circle active"></div>);
+    }
     if(this.state.questionIndex < this.state.totalQuestions){
         return (
-          <div>
-            <Question
-            question={this.questionsList[this.state.questionIndex]}
-            onClickHandler={this.onClickHandler}
-            />
-          </div>
+            <div className="questionMain">
+                <div className="progressBar">
+                    {visited}{active}
+                </div>
+                <Question
+                question={this.questionsList[this.state.questionIndex]}
+                onClickHandler={this.onClickHandler}
+                />
+            </div>
         );
     }else{
             let result = this.calculateResult();
@@ -81,3 +92,8 @@ class Quiz extends Component {
 }
 
 export default Quiz;
+//let progress = parseInt(((this.state.questionIndex)/this.state.totalQuestions)*100, 10)
+//<div style={{ padding: 20 }}>
+//    <h5>{this.state.questionIndex} out of {this.state.totalQuestions} questions answered !!</h5>
+//    <ProgressBar active now={ progress } />
+//</div>

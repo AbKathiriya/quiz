@@ -1,6 +1,9 @@
 .thumbnailList{
   text-align: center;
 }
+.thumbnailMain{
+    margin-bottom: 25px;
+}
 
 .thumbnail-image{
   height: 100%;
@@ -11,7 +14,7 @@
   background-color: #FFFFFF;
   color: #333;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
   padding: 5%;
   margin-bottom: 25px;
@@ -24,4 +27,23 @@
 .quiz-type small{
     color: #F5A623;
     font-weight: bold;
+}
+
+
+@media (min-width: 750px){
+  .thumbnailMain{
+    max-width:100%;
+  }
+}
+@media (min-width: 970px){
+  .thumbnailMain{
+    max-width:70%;
+    margin: auto;
+  }
+}
+@media (min-width: 1170px){
+  .thumbnailMain{
+    max-width:70%;
+    margin: auto;
+  }
 }

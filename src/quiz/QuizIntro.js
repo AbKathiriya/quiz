@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Quiz.css';
 import Quiz_data from '../sample_quiz.json';
-import { PageHeader, Button } from 'react-bootstrap';
+import { PageHeader, Button, Glyphicon, ButtonGroup } from 'react-bootstrap';
 
 class QuizIntro extends Component {
 
@@ -16,11 +16,19 @@ class QuizIntro extends Component {
         if(quizInfo.length){
             return (
               <div className="quizIntro">
+                <div className="divHome">
+                  <Link to={{ pathname: '/' }}>
+                    <ButtonGroup>
+                      <Button bsStyle="primary" bsSize="large">
+                          <Glyphicon glyph="home" />
+                      </Button>
+                    </ButtonGroup>
+                  </Link>
+                </div>
                 <PageHeader className="quizTitle">
-                  {quizInfo[0].quiz_description.quiz_title}
+                { quizInfo[0].quiz_description.quiz_title }
                 </PageHeader>
-                <div className="quizDescription">
-                  {quizInfo[0].quiz_description.quiz_text}
+                <div className="quizDescription" dangerouslySetInnerHTML={{__html: quizInfo[0].quiz_description.quiz_text}}>
                 </div>
                 <Link to={{
                     pathname: '/quiz/questions',

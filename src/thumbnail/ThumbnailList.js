@@ -6,7 +6,8 @@ import './Thumbnail.css';
 class ThumbnailList extends Component {
   constructor(props){
     super(props)
-    this.state = {load: 4}
+    let load = this.props.data.length < 4? this.props.data.length : 4
+    this.state = {load}
   }
   render() {
       let listLen = this.props.data.length
@@ -15,7 +16,7 @@ class ThumbnailList extends Component {
       for (var i = 0; i < this.state.load; i+=2) {
         if(i+1 < listLen){
           rows.push(
-              <Row>
+              <Row key={thumbnails[i].quiz_id}>
                 <Col xs={6} md={6}>
                   <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id} id={thumbnails[i].quiz_id} type={this.props.type}/>
                 </Col>
@@ -25,7 +26,7 @@ class ThumbnailList extends Component {
               </Row>);
         }else {
           rows.push(
-              <Row>
+              <Row key={thumbnails[i].quiz_id}>
                 <Col xs={6} md={6}>
                   <Thumbnail quizTitle={thumbnails[i].quiz_title} quizImage={thumbnails[i].quiz_image} key={thumbnails[i].quiz_id} id={thumbnails[i].quiz_id} type={this.props.type} />
                 </Col>
